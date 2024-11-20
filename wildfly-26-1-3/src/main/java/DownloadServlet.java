@@ -38,18 +38,19 @@ public class DownloadServlet extends HttpServlet {
             }
         }
         resp.getOutputStream().close();
-    }
-
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        processRequest(req, resp);
+        req.getRequestDispatcher("upload.jsp").forward(req, resp);
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("download.jsp").forward(req, resp);
-//        processRequest(req, resp);
+        processRequest(req, resp);
     }
+
+//    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+//            throws ServletException, IOException {
+//        req.getRequestDispatcher("download.jsp").forward(req, resp);
+////        processRequest(req, resp);
+//    }
 
     private String getDownloadBase() {
         return System.getProperty("download.dir");
