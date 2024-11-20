@@ -12,7 +12,7 @@
 </head>
 <body>
 <h2>Upload File</h2>
-<form method="post" action="uploadServlet" enctype="multipart/form-data">
+<form method="POST" action="uploadServlet" enctype="multipart/form-data">
     Choose a file: <input type="file" name="uploadServlet" />
     <input type="submit" value="Upload" />
 </form>
